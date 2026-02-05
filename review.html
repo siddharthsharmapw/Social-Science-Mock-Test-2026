@@ -8,86 +8,88 @@
 body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f3f4f6}
 header{background:#0f172a;color:#fff;padding:15px;text-align:center}
 .container{padding:20px}
-.qblock{margin-bottom:30px;background:#fff;padding:15px;border-radius:8px}
+.qblock{background:#fff;margin-bottom:25px;padding:15px;border-radius:8px}
 .qtitle{font-weight:bold;margin-bottom:10px}
 .compare{display:flex;gap:20px}
 .box{flex:1;border:1px solid #cbd5e1;padding:10px;border-radius:6px}
-.box h4{margin-top:0}
 .student{background:#f0f9ff}
 .model{background:#f0fdf4}
-.footer{text-align:center;margin:30px 0;color:#475569}
+h4{margin-top:0}
+.footer{text-align:center;color:#475569;margin:30px 0}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>Answer Review – CBSE Class X Social Science</h1>
-<p>Compare your answers with CBSE Model Answers</p>
+<h1>CBSE Class X – Social Science</h1>
+<p>Answer Review (Student Response vs Model Answer)</p>
 </header>
 
 <div class="container" id="content"></div>
 
 <div class="footer">
-<p>This review is for learning purposes only.</p>
+<p>Use this page for self-evaluation and improvement.</p>
 </div>
 
 <script>
 const data = JSON.parse(localStorage.getItem("sst_response")) || {};
 const container = document.getElementById("content");
 
-/* ===== MODEL ANSWERS (Q1–Q38) ===== */
+/* ================= MODEL ANSWERS (Q1–Q38) ================= */
+
 const model = {
-1:"Print culture helped in spreading ideas of liberty, equality and nationalism among people, enabling revolutionary ideas to reach a wider audience.",
-2:"A–i, B–ii, C–iii, D–iv",
-3:"Both A and R are true and R explains A.",
-4:"The war increased defence expenditure, led to heavy taxation, forced recruitment and price rise, creating mass discontent.",
-5:"Cultural symbols like the tricolour, national songs and folklore created a sense of unity and shared identity.",
-6:"The movement was withdrawn due to violence at Chauri Chaura, loss of non-violent discipline and fear of mass unrest.",
-7:"European nationalism was led by middle classes and linked to liberalism, while Indian nationalism was mass-based and anti-colonial.",
-8:"Print culture created awareness, connected people across regions and exposed colonial exploitation.",
-9:"Dandi; Madras",
-10:"Technological development and planning",
-11:"Black soil",
-12:"Both A and R are true and R explains A.",
-13:"Arid soils are sandy, lack humus and have high salt content.",
-14:"They cause ecological imbalance and displacement of local communities.",
-15:"Availability of raw material, labour, capital and transport influence location of industries.",
-16:"Agriculture provides raw material to industry while industry supplies tools and fertilizers to agriculture.",
-17:"Industrial pollution includes air and water pollution harming health and environment.",
-18:"Bhakra Nangal, Mumbai Port, Tarapur",
-19:"Horizontal",
-20:"Division of powers",
-21:"Both A and R are true and R explains A.",
-22:"Constituencies reserved for SC/ST candidates to ensure political representation.",
-23:"Lack of internal democracy and dynastic succession.",
-24:"Decentralisation transfers power to local governments and strengthens democracy.",
-25:"Democracy ensures accountability, responsiveness and legitimacy through elections.",
-26:"Political parties contest elections, form governments and represent people’s interests.",
-27:"Elections ensure citizen participation and accountability.",
-28:"Higher literacy rate",
-29:"Tertiary sector",
-30:"Both A and R are true and R explains A.",
-31:"Disguised unemployment occurs when more people are engaged than required.",
-32:"It ignores income distribution, quality of life and non-income factors.",
-33:"Money acts as medium of exchange, store of value and unit of account.",
-34:"Globalisation increases choices but also leads to competition and inequality.",
-35:"SHGs provide credit, promote savings and empower rural women.",
-36:"Excessive borrowing may trap farmers in debt due to low income.",
-37:"Awareness helps consumers fight exploitation and demand quality.",
-38:"Banks and cooperative societies"
+1:"Growth of print culture.",
+2:"Both A and R are true and R explains A.",
+3:"Giuseppe Mazzini.",
+4:"Chauri Chaura incident.",
+5:"Truth and non-violence.",
+6:"It was withdrawn after the violent Chauri Chaura incident which violated non-violence.",
+7:"It led to price rise, forced recruitment and shortage of essential goods.",
+8:"Cultural symbols created unity, pride and a shared sense of identity among people.",
+9:"Dandi; Madras.",
+10:"Black soil.",
+11:"Both A and R are true and R explains A.",
+12:"Solar energy.",
+13:"Intensive subsistence farming.",
+14:"Iron and steel industry.",
+15:"Arid soils are sandy and lack humus and moisture.",
+16:"They cause displacement, ecological imbalance and affect river ecology.",
+17:"Availability of raw materials, power and transport facilities.",
+18:"Air pollution; it reduces oxygen level in water harming aquatic life; strict pollution control.",
+19:"Bhakra Nangal; Mumbai; Tarapur.",
+20:"Horizontal power sharing.",
+21:"Federalism.",
+22:"Rule of law.",
+23:"Election Commission of India.",
+24:"A constituency reserved for SCs or STs to ensure their representation.",
+25:"Lack of internal democracy and dynastic politics.",
+26:"It strengthens democracy by promoting people’s participation at local levels.",
+27:"They contest elections, form governments and shape public opinion.",
+28:"Elections allow choice of representatives and ensure accountability of rulers.",
+29:"Literacy rate.",
+30:"Tertiary sector.",
+31:"NABARD.",
+32:"Bank employee.",
+33:"Disguised unemployment occurs when more people work than required.",
+34:"It does not show income distribution and quality of life.",
+35:"Medium of exchange, store of value and unit of account.",
+36:"SHGs promote savings, credit access and women empowerment.",
+37:"Credit supports investment; debt trap occurs when loans cannot be repaid; banks and cooperatives.",
+38:"By checking MRP and demanding bills."
 };
 
-/* ===== RENDER ===== */
+/* ================= RENDER REVIEW ================= */
+
 for(let i=1;i<=38;i++){
-  const q = document.createElement("div");
-  q.className = "qblock";
-  q.innerHTML = `
+  let div=document.createElement("div");
+  div.className="qblock";
+  div.innerHTML=`
     <div class="qtitle">Q${i}</div>
     <div class="compare">
       <div class="box student">
         <h4>Your Answer</h4>
-        <p>${data["q"+i] || "Not Attempted"}</p>
+        <p>${data["q"+i] ? data["q"+i] : "Not Attempted"}</p>
       </div>
       <div class="box model">
         <h4>Model Answer</h4>
@@ -95,7 +97,7 @@ for(let i=1;i<=38;i++){
       </div>
     </div>
   `;
-  container.appendChild(q);
+  container.appendChild(div);
 }
 </script>
 
