@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CBSE Class 10 Social Science – Answer Review</title>
+
+<style>
+body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f3f4f6}
+header{background:#0f172a;color:#fff;padding:15px;text-align:center}
+.container{padding:20px}
+.qblock{margin-bottom:30px;background:#fff;padding:15px;border-radius:8px}
+.qtitle{font-weight:bold;margin-bottom:10px}
+.compare{display:flex;gap:20px}
+.box{flex:1;border:1px solid #cbd5e1;padding:10px;border-radius:6px}
+.box h4{margin-top:0}
+.student{background:#f0f9ff}
+.model{background:#f0fdf4}
+.footer{text-align:center;margin:30px 0;color:#475569}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Answer Review – CBSE Class X Social Science</h1>
+<p>Compare your answers with CBSE Model Answers</p>
+</header>
+
+<div class="container" id="content"></div>
+
+<div class="footer">
+<p>This review is for learning purposes only.</p>
+</div>
+
+<script>
+const data = JSON.parse(localStorage.getItem("sst_response")) || {};
+const container = document.getElementById("content");
+
+/* ===== MODEL ANSWERS (Q1–Q38) ===== */
+const model = {
+1:"Print culture helped in spreading ideas of liberty, equality and nationalism among people, enabling revolutionary ideas to reach a wider audience.",
+2:"A–i, B–ii, C–iii, D–iv",
+3:"Both A and R are true and R explains A.",
+4:"The war increased defence expenditure, led to heavy taxation, forced recruitment and price rise, creating mass discontent.",
+5:"Cultural symbols like the tricolour, national songs and folklore created a sense of unity and shared identity.",
+6:"The movement was withdrawn due to violence at Chauri Chaura, loss of non-violent discipline and fear of mass unrest.",
+7:"European nationalism was led by middle classes and linked to liberalism, while Indian nationalism was mass-based and anti-colonial.",
+8:"Print culture created awareness, connected people across regions and exposed colonial exploitation.",
+9:"Dandi; Madras",
+10:"Technological development and planning",
+11:"Black soil",
+12:"Both A and R are true and R explains A.",
+13:"Arid soils are sandy, lack humus and have high salt content.",
+14:"They cause ecological imbalance and displacement of local communities.",
+15:"Availability of raw material, labour, capital and transport influence location of industries.",
+16:"Agriculture provides raw material to industry while industry supplies tools and fertilizers to agriculture.",
+17:"Industrial pollution includes air and water pollution harming health and environment.",
+18:"Bhakra Nangal, Mumbai Port, Tarapur",
+19:"Horizontal",
+20:"Division of powers",
+21:"Both A and R are true and R explains A.",
+22:"Constituencies reserved for SC/ST candidates to ensure political representation.",
+23:"Lack of internal democracy and dynastic succession.",
+24:"Decentralisation transfers power to local governments and strengthens democracy.",
+25:"Democracy ensures accountability, responsiveness and legitimacy through elections.",
+26:"Political parties contest elections, form governments and represent people’s interests.",
+27:"Elections ensure citizen participation and accountability.",
+28:"Higher literacy rate",
+29:"Tertiary sector",
+30:"Both A and R are true and R explains A.",
+31:"Disguised unemployment occurs when more people are engaged than required.",
+32:"It ignores income distribution, quality of life and non-income factors.",
+33:"Money acts as medium of exchange, store of value and unit of account.",
+34:"Globalisation increases choices but also leads to competition and inequality.",
+35:"SHGs provide credit, promote savings and empower rural women.",
+36:"Excessive borrowing may trap farmers in debt due to low income.",
+37:"Awareness helps consumers fight exploitation and demand quality.",
+38:"Banks and cooperative societies"
+};
+
+/* ===== RENDER ===== */
+for(let i=1;i<=38;i++){
+  const q = document.createElement("div");
+  q.className = "qblock";
+  q.innerHTML = `
+    <div class="qtitle">Q${i}</div>
+    <div class="compare">
+      <div class="box student">
+        <h4>Your Answer</h4>
+        <p>${data["q"+i] || "Not Attempted"}</p>
+      </div>
+      <div class="box model">
+        <h4>Model Answer</h4>
+        <p>${model[i]}</p>
+      </div>
+    </div>
+  `;
+  container.appendChild(q);
+}
+</script>
+
+</body>
+</html>
